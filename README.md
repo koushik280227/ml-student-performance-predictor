@@ -2,6 +2,44 @@
 
 A Machine Learning project that predicts student scores based on study hours and attendance.
 
+## Installation
+
+1. Clone the repository
+
+git clone https://github.com/koushik280227/ml-student-performance-predictor.git
+
+2. Navigate to the project folder
+
+cd ml-student-performance-predictor
+
+3. Create a virtual environment
+
+python -m venv venviron
+
+4. Activate the virtual environment
+
+macOS/Linux:
+
+source venviron/bin/activate
+
+Windows:
+
+venviron\Scripts\activate
+
+5. Install dependencies
+
+pip install -r requirements.txt
+
+## Run FastAPI Server
+
+cd src
+
+uvicorn app:app --reload
+
+Open:
+
+http://127.0.0.1:8000/docs
+
 ## Features
 
 - Data loading using Pandas
