@@ -25,6 +25,8 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
+import joblib
+
 df = pd.read_csv("../data/students.csv")
 X = df[["Study_Hours", "Attendance"]]
 y = df["Score"]
@@ -37,23 +39,5 @@ y_pred = model.predict(X_test)
 score = r2_score(y_test, y_pred)
 # print("R² Score:", score)
 print(f"Model Accuracy (R²): {score:.4f}")
-study_hours = float(input("Enter Study Hours: "))
-attendance = float(input("Enter Attendance: "))
-
-if study_hours < 0:
-    print("Study Hours cannot be negative.")
-    exit()
-
-if attendance < 0 or attendance > 100:
-    print("Attendance must be between 0 and 100.")
-    exit()
-
-input_data = pd.DataFrame(
-    {
-        "Study_Hours": [study_hours],
-        "Attendance": [attendance]
-    }
-)
-
-prediction = model.predict(input_data)
-print(f"Predicted Score: {prediction[0]:.2f}")
+joblib.dump(model, "../models/student_score_model.pkl")
+print("Model saved successfully!")
