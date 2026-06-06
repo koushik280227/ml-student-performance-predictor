@@ -30,24 +30,27 @@ A Machine Learning project that predicts student scores based on study hours and
 
 ## Project Structure
 
+```text
 ml-student-performance-predictor
-
+│
 ├── data/
 │   └── students.csv
-
+│
 ├── graphs/
 │   └── study_hours_vs_score.png
-
+│
 ├── models/
 │   └── student_score_model.pkl
-
+│
 ├── src/
 │   ├── train_model.py
 │   ├── predict.py
 │   ├── visualize.py
 │   └── app.py
-
+│
 ├── README.md
+└── .gitignore
+```
 
 ## Machine Learning Workflow
 
